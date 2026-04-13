@@ -16,6 +16,8 @@ The system provides two primary views:
 1. **Real-time Gauges:** Instantaneous look at air quality metrics.
 2. **Time-Series Analysis:** Historical trends (1hr, 24hr, 7d) to identify spikes caused by cooking, cleaning, or external environmental factors.
 
+<img width="537" height="986" alt="image" src="https://github.com/user-attachments/assets/894718ab-aac8-4307-a288-16bcc29ffb91" />
+
 ## 📱 Mobile Kiosk
 The project includes a custom `index.html` wrapper designed to be "Installed" as a Web App on iOS/Android. It features:
 - A responsive 2x2 gauge grid.
