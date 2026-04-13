@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home Air Quality</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #181b1f;
+            --accent: #56a64b;
+        }
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            background: var(--card-bg);
+            border-bottom: 1px solid #2c3235;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        .container {
+            width: 95%;
+            max-width: 500px;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .gauge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .gauge-frame { height: 180px; }
+        .graph-frame { height: 300px; }
+    </style>
+</head>
+<body>
+
+    <header>VANCOUVER AQI STATION</header>
+
+    <div class="container">
+        <div class="gauge-grid">
+            <iframe class="gauge-frame" src="http://192.168.6.160:3000/d-solo/adnzk7g/aqi-vancouver?orgId=1&panelId=1&hideLogo=true&kiosk"></iframe>
+            <iframe class="gauge-frame" src="http://192.168.6.160:3000/d-solo/adnzk7g/aqi-vancouver?orgId=1&panelId=2&hideLogo=true&kiosk"></iframe>
+            <iframe class="gauge-frame" src="http://192.168.6.160:3000/d-solo/adnzk7g/aqi-vancouver?orgId=1&panelId=3&hideLogo=true&kiosk"></iframe>
+            <iframe class="gauge-frame" src="http://192.168.6.160:3000/d-solo/adnzk7g/aqi-vancouver?orgId=1&panelId=4&hideLogo=true&kiosk"></iframe>
+        </div>
+
+        <iframe class="graph-frame" src="http://192.168.6.160:3000/d-solo/adnzk7g/aqi-vancouver?orgId=1&panelId=5&hideLogo=true&kiosk&from=now-1h&to=now"></iframe>
+        <iframe class="graph-frame" src="http://192.168.6.160:3000/d-solo/adnzk7g/aqi-vancouver?orgId=1&panelId=6&hideLogo=true&kiosk&from=now-1h&to=now"></iframe>
+    </div>
+
+<script>
+    // Refresh the entire page every 30 minutes (1800000 milliseconds)
+    setTimeout(function() {
+        location.reload();
+    }, 1800000);
+</script>
+
+</body>
+</html>
